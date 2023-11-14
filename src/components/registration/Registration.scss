@@ -32,7 +32,7 @@
 
 .registration {
     width: 441px;
-    margin-right: 25px;
+    margin-right: 40px;
     h1 {
         color: #1c1c1c;
         text-align: center;
@@ -62,7 +62,6 @@
 }
 
 .registration-buttons {
-    input,
     button {
         border: 0;
         border-radius: 13px;
@@ -70,8 +69,6 @@
         width: 364px;
         height: 52px;
         margin-bottom: 24px;
-    }
-    button {
         background: #1c1c1c;
         color: #fff;
         text-align: center;
@@ -81,6 +78,30 @@
         line-height: normal;
         cursor: pointer;
         margin-bottom: 23.5px;
+    }
+}
+.icon {
+    border: 0;
+    margin-bottom: 24px;
+    border-radius: 13px;
+    background: #f2f2f2;
+    width: 364px;
+    height: 52px;
+    input {
+        border: 0;
+        color: #1c1c1c;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        width: 364px;
+        height: 52px;
+        background: #f2f2f2;
+        outline: none;
+    }
+    img {
+        background: #f2f2f2;
+        margin-right: 10px;
     }
 }
 

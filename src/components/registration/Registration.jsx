@@ -5,43 +5,19 @@ import "./Registration.scss";
 const Registration = () => {
     return (
         <section>
-            <div className="image">
-                {/* <img
-                    src="../../src/assets/registration/star.svg"
-                    width={447}
-                    height={447}
-                    className="star"
-                />
-                <img
-                    src="../../src/assets/registration/circle-1.png"
-                    width={550}
-                    height={276}
-                    className="circle"
-                />
-                <img
-                    src="../../src/assets/registration/blueStar.svg"
-                    width={200}
-                    height={200}
-                    className="blueStar"
-                />
-                <img
-                    src="../../src/assets/registration/purpleStar.png"
-                    width={200}
-                    height={200}
-                    className="purpleStar"
-                /> */}
-            </div>
             <div className="container d-flex justify-center align-center">
                 <div className="registration d-flex flex-column align-center">
                     <h1>Добро пожаловать!</h1>
                     <p>В мир нескучной учебы - MixLearn</p>
                     <div className="registration-buttons d-flex flex-column justify-center align-center">
-                        <input
-                            placeholder="Имя_пользователя"
-                            type="text"
-                            className="icon username"
-                        />
-                        <input placeholder="Пароль" type="text" className="icon password" />
+                        <div className="icon username d-flex align-center">
+                            <img src="../../src/assets/registration/user.svg" alt="user" />
+                            <input placeholder="Имя_пользователя" type="text" />
+                        </div>
+                        <div className="icon password d-flex align-center">
+                            <img src="../../src/assets/registration/password.svg" alt="password" />
+                            <input placeholder="Пароль" type="text" />
+                        </div>
                         <Link to="/Homepage" className="clean">
                             <button>Войти</button>
                         </Link>
@@ -56,7 +32,7 @@ const Registration = () => {
                 </div>
                 <div className="children">
                     <img
-                        src="../../src/assets/registration/children-logo.png"
+                        src="../../src/assets/registration/children-with-cap.png"
                         width={801}
                         height={779}
                     />
