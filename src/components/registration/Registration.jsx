@@ -4,40 +4,87 @@ import "./Registration.scss";
 
 const Registration = () => {
     return (
-        <section className="container d-flex justify-center align-center clean">
-            <div className="star">
-                <img src="../../src/assets/registration/star.svg" />
+        <section>
+            <div className="image">
+                {/* <img
+                    src="../../src/assets/registration/star.svg"
+                    width={447}
+                    height={447}
+                    className="star"
+                />
+                <img
+                    src="../../src/assets/registration/circle-1.png"
+                    width={550}
+                    height={276}
+                    className="circle"
+                />
+                <img
+                    src="../../src/assets/registration/blueStar.svg"
+                    width={200}
+                    height={200}
+                    className="blueStar"
+                />
+                <img
+                    src="../../src/assets/registration/purpleStar.png"
+                    width={200}
+                    height={200}
+                    className="purpleStar"
+                /> */}
             </div>
-            <div className="registration">
-                <div className="hello d-flex justify-center align-center flex-column">
-                    <h1 className="hello-up">Добро пожаловать</h1>
-                    <p className="hello-down">В мир нескучной учебы - MixLearn</p>
-                </div>
-                <div className="data-input d-flex flex-column align-center">
-                    <input placeholder="Имя_пользователя" className="data-input-elem"></input>
-                    <input placeholder="Пароль" className="data-input-elem"></input>
-                    <Link to="/Homepage" className="clean">
-                        <button className="data-input-elem data-input-elem-btn clean">Войти</button>
-                    </Link>
-                </div>
-                <div className="register-user d-flex flex-column">
+            <div className="container d-flex justify-center align-center">
+                <div className="registration d-flex flex-column align-center">
+                    <h1>Добро пожаловать!</h1>
+                    <p>В мир нескучной учебы - MixLearn</p>
+                    <div className="registration-buttons d-flex flex-column justify-center align-center">
+                        <input
+                            placeholder="Имя_пользователя"
+                            type="text"
+                            className="icon username"
+                        />
+                        <input placeholder="Пароль" type="text" className="icon password" />
+                        <Link to="/Homepage" className="clean">
+                            <button>Войти</button>
+                        </Link>
+                    </div>
                     <h2>Зарегистрироваться как:</h2>
-                    <div className="register-user-container">
-                        <button>Ученик</button>
-                        <button>Родитель</button>
-                        <button>Администрация</button>
-                        <button>Учитель</button>
+                    <div className="registration-user d-flex justify-center align-center">
+                        <button className="user">Ученик</button>
+                        <button className="user">Родитель</button>
+                        <button className="user">Администрация</button>
+                        <button className="user">Учитель</button>
                     </div>
                 </div>
-            </div>
-            <div className="rightSide">
+                <div className="children">
+                    <img
+                        src="../../src/assets/registration/children-logo.png"
+                        width={801}
+                        height={779}
+                    />
+                </div>
                 <img
-                    src="../../src/assets/registration/kids.jpg"
-                    alt="kids"
-                    width={801}
-                    height={779}
+                    src="../../src/assets/registration/star.svg"
+                    width={447}
+                    height={447}
+                    className="star"
                 />
-                {/* <div className="image"></div> */}
+                <img
+                    src="../../src/assets/registration/circle-1.png"
+                    width={550}
+                    height={276}
+                    className="circle"
+                />
+                <img
+                    src="../../src/assets/registration/blueStar.svg"
+                    width={200}
+                    height={200}
+                    className="blueStar"
+                />
+                <img
+                    src="../../src/assets/registration/purpleStar.png"
+                    width={200}
+                    height={200}
+                    className="purpleStar"
+                />
             </div>
         </section>
     );

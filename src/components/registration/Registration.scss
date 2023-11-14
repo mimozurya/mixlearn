@@ -1,75 +1,56 @@
 * {
     box-sizing: border-box;
-    background: #fff;
     font-family: "Golos Text", sans-serif;
-    margin: 0 auto;
+    background: #fff;
+    overflow: hidden;
+}
+
+.star {
+    margin-left: -1800px;
+    margin-top: 930px;
+    position: absolute;
+}
+.circle {
+    position: absolute;
+    margin-left: 1750px;
+    margin-top: 800px;
+}
+.blueStar {
+    position: absolute;
+    margin-left: 1820px;
+    margin-top: -860px;
+}
+.purpleStar {
+    position: absolute;
+    margin-left: -1230px;
+    margin-top: -635px;
 }
 
 .container {
-    // border: 1px solid red;
-    width: 1366px;
-    height: 768px;
-    margin-top: 60px;
+    margin-top: 50px;
 }
 
 .registration {
     width: 441px;
-    display: flex;
-    flex-direction: column;
-    margin-right: 65px;
-    margin-bottom: 111px;
-    margin-top: 63px;
-}
-
-.hello-up {
-    color: #1c1c1c;
-    text-align: center;
-    font-size: 56px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    margin: 0;
-    padding: 0;
-    margin-bottom: 18px;
-}
-
-.hello-down {
-    color: #4b4b4b;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    margin: 0;
-    padding: 0;
-    margin-bottom: 27.5px;
-}
-
-.data-input-elem {
-    border-radius: 13px;
-    background: #f2f2f2;
-    width: 364px;
-    height: 52px;
-    padding: 0;
-    margin: 0;
-    margin-bottom: 24px;
-}
-
-.data-input-elem:last-child {
-    margin-bottom: 23px;
-}
-
-.data-input-elem-btn {
-    background: #1c1c1c;
-    color: #fff;
-    text-align: center;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    cursor: pointer;
-}
-
-.register-user {
+    margin-right: 25px;
+    h1 {
+        color: #1c1c1c;
+        text-align: center;
+        font-size: 56px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin: 0;
+        padding: 0;
+    }
+    p {
+        color: #4b4b4b;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin: 18px 0 27.5px 0;
+    }
     h2 {
         color: #1c1c1c;
         font-size: 16px;
@@ -80,7 +61,30 @@
     }
 }
 
-.register-user-container {
+.registration-buttons {
+    input,
+    button {
+        border: 0;
+        border-radius: 13px;
+        background: #f2f2f2;
+        width: 364px;
+        height: 52px;
+        margin-bottom: 24px;
+    }
+    button {
+        background: #1c1c1c;
+        color: #fff;
+        text-align: center;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        cursor: pointer;
+        margin-bottom: 23.5px;
+    }
+}
+
+.registration-user {
     display: flex;
     width: 357.543px;
     align-items: flex-start;
@@ -88,28 +92,17 @@
     gap: 24px;
     flex-wrap: wrap;
     button {
+        border-radius: 13px;
+        border: 1px solid #1c1c1c;
         width: 166.272px;
         height: 52px;
         flex-shrink: 0;
-        border-radius: 13px;
-        border: 1px solid #1c1c1c;
     }
 }
 
-.rightSide {
-    margin-bottom: 51px;
+.icon {
+    background-repeat: no-repeat;
+    background-position: right center;
+    font-size: 14px;
+    padding-left: 20px;
 }
-
-.star {
-    margin: 0;
-    border: 0;
-    margin-top: 629.16px;
-}
-
-// .image {
-//     width: 711px;
-//     height: 667px;
-//     flex-shrink: 0;
-//     border-radius: 72px;
-//     background: linear-gradient(180deg, #ff8a35 0%, #ffeb36 100%);
-// }
