@@ -1,8 +1,7 @@
-* {
+.registration-container {
+    background: #fff;
     box-sizing: border-box;
     font-family: "Golos Text", sans-serif;
-    background: #fff;
-    overflow: hidden;
 }
 
 .star {
@@ -28,6 +27,7 @@
 
 .container {
     margin-top: 50px;
+    background: #fff !important;
 }
 
 .registration {
@@ -94,8 +94,8 @@
         font-style: normal;
         font-weight: 400;
         line-height: normal;
-        width: 364px;
-        height: 52px;
+        width: 300px;
+        height: 46px;
         background: #f2f2f2;
         outline: none;
     }

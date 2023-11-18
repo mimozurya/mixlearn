@@ -2,9 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Registration.scss";
 
-const Registration = () => {
+function Registration() {
     return (
-        <section>
+        <section className="registration-container">
             <div className="container d-flex justify-center align-center">
                 <div className="registration d-flex flex-column align-center">
                     <h1>Добро пожаловать!</h1>
@@ -18,7 +18,7 @@ const Registration = () => {
                             <img src="../../src/assets/registration/password.svg" alt="password" />
                             <input placeholder="Пароль" type="text" />
                         </div>
-                        <Link to="/Homepage" className="clean">
+                        <Link to="/homepage" className="clean">
                             <button>Войти</button>
                         </Link>
                     </div>
@@ -64,6 +64,6 @@ const Registration = () => {
             </div>
         </section>
     );
-};
+}
 
 export default Registration;
