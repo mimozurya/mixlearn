@@ -1,7 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import "../index.scss";
+import Article from "../components/Article";
 
 function Homepage() {
+    const [articleText, setArticleText] = useState([]);
+    const [articleTextId, setArticleTextId] = useState(1);
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        async function fetchData() {
+            const articleResponce = await axios.get(
+                "https://6558a622e93ca47020a98ea9.mockapi.io/paragraph"
+            );
+            setIsLoading(false);
+            setArticleText(articleResponce.data);
+        }
+
+        fetchData();
+    }, []);
+
+    const callArticle = (key) => {
+        <Article articleText={articleText} />;
+    };
+
     return (
         <div className="home-page">
             <div className="container-home d-flex justify-around">
@@ -77,9 +99,9 @@ function Homepage() {
                     </div>
                     <div className="courses">
                         <h2 className="mb-40">Рекомендованные курсы только для тебя</h2>
-                        <div className="courses-photo d-flex justify-center">
+                        <div className="courses-photo d-flex justify-center ">
                             <div className="courses-photo-block">
-                                <div id="short-des">
+                                <div className="short-des">
                                     <p>85 мин</p>
                                 </div>
                                 <div id="short-tagging">
@@ -88,7 +110,7 @@ function Homepage() {
                                 <img src="../src/assets/girl.png" alt="girl" />
                             </div>
                             <div className="courses-photo-block">
-                                <div id="short-des2">
+                                <div className="short-des">
                                     <p>105 мин</p>
                                 </div>
                                 <div id="short-tagging2">
@@ -101,40 +123,63 @@ function Homepage() {
                     <div className="news">
                         <h2>Новости твоей школы!</h2>
                         <div className="news-selector d-flex justify-center">
-                            <div>
-                                <div id="short-data">
+                            <div
+                                className="d-flex flex-column align-center cu-p"
+                                onClick={() => setArticleTextId(1)}
+                            >
+                                <img src="../src/assets/jenga.jpg" alt="jenga" />
+                                <div className="news-data">
                                     <p>20.03.23</p>
                                 </div>
-                                <img src="../src/assets/jenga.jpg" alt="jenga" />
                             </div>
-                            <div>
-                                <div id="short-data2">
+                            <div
+                                className="d-flex flex-column align-center cu-p"
+                                onClick={() => setArticleTextId(2)}
+                            >
+                                <img src="../src/assets/lamp.png" alt="lamp" />
+                                <div className="news-data">
                                     <p>23.02.23</p>
                                 </div>
-                                <img src="../src/assets/lamp.png" alt="lamp" />
                             </div>
-                            <div>
-                                <div id="short-data3">
+                            <div
+                                className="d-flex flex-column align-center cu-p"
+                                onClick={() => setArticleTextId(3)}
+                            >
+                                <img src="../src/assets/guitar.png" alt="guitar" />
+                                <div className="news-data">
                                     <p>27.05.23</p>
                                 </div>
-                                <img src="../src/assets/guitar.png" alt="guitar" />
                             </div>
-                            <div>
-                                <div id="short-data4">
-                                    <p>23.02.23</p>
-                                </div>
+                            <div
+                                className="d-flex flex-column align-center cu-p"
+                                onClick={() => setArticleTextId(4)}
+                            >
                                 <img src="../src/assets/shy-girl.png" alt="shy-girl" />
-                            </div>
-                            <div>
-                                <div id="short-data5">
+                                <div className="news-data">
                                     <p>23.02.23</p>
                                 </div>
+                            </div>
+                            <div
+                                className="d-flex flex-column align-center cu-p"
+                                onClick={() => setArticleTextId(5)}
+                            >
                                 <img src="../src/assets/cinema.png" alt="cinema" />
+                                <div className="news-data">
+                                    <p>23.02.23</p>
+                                </div>
                             </div>
                         </div>
-                        <div className="news-article d-flex justify-center">
-                            <img src="../src/assets/logo-purple.png" />
-                        </div>
+                    </div>
+                    <div className="news-article d-flex justify-center">
+                        {!isLoading ? (
+                            <Article
+                                articleText={articleText}
+                                articleTextId={articleTextId}
+                                isLoading={isLoading}
+                            />
+                        ) : (
+                            console.log("жди")
+                        )}
                     </div>
                 </section>
             </div>

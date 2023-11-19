@@ -17,6 +17,14 @@ html {
     margin-right: 38px;
 }
 
+.transform {
+    transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+    &:hover {
+        box-shadow: 0px 20px 35px rgba(0, 0, 0, 0.76);
+        transform: translateY(-10px);
+    }
+}
+
 .navigation {
     width: 440px;
     margin-top: 30px;
@@ -109,32 +117,26 @@ html {
                 flex-direction: column;
                 align-items: center;
                 margin-right: 48px;
-                #short-des,
-                #short-des2 {
-                    z-index: 1;
-                    position: absolute;
-                    top: 25px;
-                    left: 445px;
+                .short-des {
+                    position: relative;
                     border-radius: 20px;
                     background: #8f93ff;
-                    color: #fff;
-                    font-size: 32px;
-                    font-style: normal;
-                    font-weight: 700;
-                    line-height: normal;
-                    height: 50px;
-                    width: 150px;
+                    width: 117px;
+                    height: 45px;
+                    top: 65px;
+                    left: 190px;
                     p {
-                        margin: 5px 10px;
+                        color: #fff;
+                        font-size: 20px;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: 118.523%;
+                        letter-spacing: -0.4px;
+                        margin: 11px 20px;
                     }
-                }
-                #short-des2 {
-                    z-index: 2;
-                    left: 1030px;
                 }
                 #short-tagging,
                 #short-tagging2 {
-                    z-index: 3;
                     border-radius: 29px;
                     background: rgba(255, 255, 255, 0.1);
                     box-shadow: 3px 3px 6px -1px rgba(255, 255, 255, 0.25);
@@ -174,46 +176,24 @@ html {
             margin-bottom: 30px;
         }
         .news-selector {
-            div {
-                margin: 0 20px;
-            }
-            #short-data,
-            #short-data2,
-            #short-data3,
-            #short-data4,
-            #short-data5 {
-                position: absolute;
+            gap: 35px;
+            .news-data {
+                position: relative;
                 border-radius: 19px;
                 border: 2px solid #fff;
-                color: #fff;
-                font-size: 32px;
-                font-style: normal;
-                font-weight: 500;
-                line-height: normal;
-                height: 30px;
-                top: 1120px;
-            }
-            p {
-                margin: -5px 15px;
-            }
-            #short-data {
-                left: 538px;
-            }
-            #short-data2 {
-                left: 794px;
-            }
-            #short-data3 {
-                left: 1050px;
-            }
-            #short-data4 {
-                left: 1305px;
-            }
-            #short-data5 {
-                left: 1562px;
-            }
-            img {
-                border-radius: 39px;
-                background-color: rgba(0, 0, 0, 0.3);
+                width: 156px;
+                height: 48px;
+                bottom: 60px;
+                background: rgba(255, 255, 255, 0.05);
+                box-shadow: 3px 3px 6px -1px rgba(255, 255, 255, 0.55);
+                p {
+                    color: #fff;
+                    font-size: 32px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+                    margin: 5px 10px;
+                }
             }
         }
     }
@@ -221,5 +201,31 @@ html {
         border-radius: 69px;
         background: #7b7b7b;
         margin: 25px 20px;
+        .article-photo {
+            padding: 0;
+            margin: 46px 20px 73px 46px;
+            gap: 15px;
+            img {
+                border-radius: 48px;
+                border: 7px solid #fb6d3a;
+                margin-bottom: 20px;
+            }
+        }
+        .article-text {
+            color: #fff;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            margin: 46px 50px 60px 10px;
+            h2 {
+                margin: 0;
+                color: #fb6d3a;
+                font-size: 32px;
+                &:last-child {
+                    font-size: 26px;
+                }
+            }
+        }
     }
 }
