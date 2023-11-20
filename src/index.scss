@@ -229,3 +229,102 @@ html {
         }
     }
 }
+
+.information-chat {
+    width: 1400px;
+    border-radius: 50px;
+    background: #fff;
+    margin-bottom: 38px;
+    margin-top: 17px;
+    header {
+        width: 1200px;
+        border-radius: 16px 16px 16px 0px;
+        box-shadow: 0px 1px 2px 0px rgba(2, 17, 37, 0.12);
+        margin-top: 24px;
+        .chat-logotype {
+            margin-left: 24px;
+        }
+        h1 {
+            color: #0e1114;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 32px;
+            margin: 0 16px;
+            margin-right: 80px;
+        }
+        .chat-header-userTo {
+            b,
+            p {
+                color: #0e1114;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 20px;
+                margin-right: 5px;
+            }
+            p {
+                font-weight: 400;
+                margin-right: 480px;
+            }
+        }
+        .chat-header-setting {
+            margin: 0 30px;
+            img {
+                margin: 0 6px;
+            }
+        }
+    }
+    .chat-left-users {
+        width: 350px;
+        border: 1px solid black;
+        .chat-search {
+            border-radius: 8px;
+            border: 1px solid #cdd5de;
+            background: #fff;
+            margin: 12px 24px;
+            height: 32px;
+            img {
+                margin: 0 10px;
+            }
+            input {
+                height: 30px;
+                border: 0;
+                color: #8fa0af;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 20px;
+                outline: none;
+            }
+        }
+        .chat-left-user {
+            border: 1px solid red;
+            margin: 12px 24px;
+            img {
+                padding-right: 8px;
+            }
+            .chat-left-userPlaceholder {
+                margin-right: 8px;
+                h3,
+                h4 {
+                    margin: 0;
+                }
+                h3 {
+                    color: #0e1114;
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 20px;
+                }
+                h4 {
+                    color: #616c76;
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 20px;
+                }
+            }
+        }
+    }
+}

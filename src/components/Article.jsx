@@ -1,7 +1,11 @@
 import ContentLoader from "react-content-loader";
-function Article({ articleText, articleTextId, isLoading }) {
+import AppContext from "../context";
+import { useContext } from "react";
+
+function Article() {
+    const { articleText, articleTextId, isLoading } = useContext(AppContext);
     const article = articleText.find((item) => Number(item.id) === Number(articleTextId));
-    console.log(article);
+
     return (
         <>
             {!article && isLoading ? (
