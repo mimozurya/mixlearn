@@ -1,0 +1,330 @@
+html {
+    margin: -8px;
+    padding: -10px;
+    box-sizing: border-box;
+}
+
+.home-page {
+    background: #7b7b7b;
+    min-height: 100vh;
+}
+
+.container-home {
+    background: #7b7b7b;
+    box-sizing: border-box;
+    font-family: "Golos Text", sans-serif;
+    margin-left: 69px;
+    margin-right: 38px;
+}
+
+.transform {
+    transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+    &:hover {
+        box-shadow: 0px 20px 35px rgba(0, 0, 0, 0.76);
+        transform: translateY(-10px);
+    }
+}
+
+.navigation {
+    width: 440px;
+    margin-top: 30px;
+    .avatar {
+        margin-bottom: 50px;
+        img {
+            margin-right: 35.5px;
+        }
+        p {
+            font-size: 40px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            color: #fff;
+        }
+    }
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        li {
+            color: #fff;
+            text-align: center;
+            font-family: Inter;
+            font-size: 26px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            margin-bottom: 44px;
+            img {
+                margin-right: 20px;
+            }
+        }
+    }
+}
+
+.information {
+    width: 1400px;
+    border-radius: 50px;
+    background: #fff;
+    margin-bottom: 38px;
+    margin-top: 17px;
+    .header {
+        margin-bottom: 46px;
+        margin-top: 55px;
+        .search {
+            width: 900px;
+            border-radius: 42px;
+            background: #f6f6f5;
+            margin-left: 88px;
+            img {
+                margin-left: 40px;
+            }
+            input {
+                width: 800px;
+                background: #f6f6f5;
+                height: 75px;
+                border: 0;
+                margin-left: 20px;
+                font-size: 24px;
+                outline: none;
+            }
+        }
+        .notification-count {
+            position: relative;
+            border-radius: 22px;
+            background: #8f93ff;
+            left: 25px;
+            width: 43px;
+            height: 18px;
+            p {
+                color: #fff;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+                margin: -1px 13px;
+            }
+        }
+        .lvl {
+            margin-right: 46px;
+        }
+    }
+    .courses {
+        margin-bottom: 24px;
+        .courses-photo {
+            position: relative;
+            .courses-photo-block {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-right: 48px;
+                .short-des {
+                    position: relative;
+                    border-radius: 20px;
+                    background: #8f93ff;
+                    width: 117px;
+                    height: 45px;
+                    top: 65px;
+                    left: 190px;
+                    p {
+                        color: #fff;
+                        font-size: 20px;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: 118.523%;
+                        letter-spacing: -0.4px;
+                        margin: 11px 20px;
+                    }
+                }
+                #short-tagging,
+                #short-tagging2 {
+                    border-radius: 29px;
+                    background: rgba(255, 255, 255, 0.1);
+                    box-shadow: 3px 3px 6px -1px rgba(255, 255, 255, 0.25);
+                    backdrop-filter: blur(10px);
+                    position: absolute;
+                    color: #fff;
+                    font-size: 20px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 129.023%; /* 25.805px */
+                    letter-spacing: 1.4px;
+                    max-width: 460px;
+                    top: 350px;
+                    p {
+                        margin-left: 20px;
+                    }
+                }
+            }
+        }
+        h2 {
+            color: #000;
+            font-size: 36px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            margin-left: 90px;
+        }
+    }
+    .news {
+        h2 {
+            color: #000;
+            font-size: 36px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            margin-left: 90px;
+            margin-bottom: 30px;
+        }
+        .news-selector {
+            gap: 35px;
+            .news-data {
+                position: relative;
+                border-radius: 19px;
+                border: 2px solid #fff;
+                width: 156px;
+                height: 48px;
+                bottom: 60px;
+                background: rgba(255, 255, 255, 0.05);
+                box-shadow: 3px 3px 6px -1px rgba(255, 255, 255, 0.55);
+                p {
+                    color: #fff;
+                    font-size: 32px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+                    margin: 5px 10px;
+                }
+            }
+        }
+    }
+    .news-article {
+        border-radius: 69px;
+        background: #7b7b7b;
+        margin: 25px 20px;
+        .article-photo {
+            padding: 0;
+            margin: 46px 20px 73px 46px;
+            gap: 15px;
+            img {
+                border-radius: 48px;
+                border: 7px solid #fb6d3a;
+                margin-bottom: 20px;
+            }
+        }
+        .article-text {
+            color: #fff;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            margin: 46px 50px 60px 10px;
+            h2 {
+                margin: 0;
+                color: #fb6d3a;
+                font-size: 32px;
+                &:last-child {
+                    font-size: 26px;
+                }
+            }
+        }
+    }
+}
+
+.information-chat {
+    width: 1400px;
+    border-radius: 50px;
+    background: #fff;
+    margin-bottom: 38px;
+    margin-top: 17px;
+    header {
+        width: 1200px;
+        border-radius: 16px 16px 16px 0px;
+        box-shadow: 0px 1px 2px 0px rgba(2, 17, 37, 0.12);
+        margin-top: 24px;
+        .chat-logotype {
+            margin-left: 24px;
+        }
+        h1 {
+            color: #0e1114;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 32px;
+            margin: 0 16px;
+            margin-right: 80px;
+        }
+        .chat-header-userTo {
+            b,
+            p {
+                color: #0e1114;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 20px;
+                margin-right: 5px;
+            }
+            p {
+                font-weight: 400;
+                margin-right: 480px;
+            }
+        }
+        .chat-header-setting {
+            margin: 0 30px;
+            img {
+                margin: 0 6px;
+            }
+        }
+    }
+    .chat-left-users {
+        width: 350px;
+        border: 1px solid black;
+        .chat-search {
+            border-radius: 8px;
+            border: 1px solid #cdd5de;
+            background: #fff;
+            margin: 12px 24px;
+            height: 32px;
+            img {
+                margin: 0 10px;
+            }
+            input {
+                height: 30px;
+                border: 0;
+                color: #8fa0af;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 20px;
+                outline: none;
+            }
+        }
+        .chat-left-user {
+            border: 1px solid red;
+            margin: 12px 24px;
+            img {
+                padding-right: 8px;
+            }
+            .chat-left-userPlaceholder {
+                margin-right: 8px;
+                h3,
+                h4 {
+                    margin: 0;
+                }
+                h3 {
+                    color: #0e1114;
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 20px;
+                }
+                h4 {
+                    color: #616c76;
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 20px;
+                }
+            }
+        }
+    }
+}

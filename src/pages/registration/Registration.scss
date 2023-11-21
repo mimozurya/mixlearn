@@ -1,0 +1,129 @@
+.registration-container {
+    background: #fff;
+    box-sizing: border-box;
+    font-family: "Golos Text", sans-serif;
+}
+
+.star {
+    margin-left: -1800px;
+    margin-top: 930px;
+    position: absolute;
+}
+.circle {
+    position: absolute;
+    margin-left: 1750px;
+    margin-top: 800px;
+}
+.blueStar {
+    position: absolute;
+    margin-left: 1820px;
+    margin-top: -860px;
+}
+.purpleStar {
+    position: absolute;
+    margin-left: -1230px;
+    margin-top: -635px;
+}
+
+.container {
+    margin-top: 50px;
+    background: #fff !important;
+}
+
+.registration {
+    width: 441px;
+    margin-right: 40px;
+    h1 {
+        color: #1c1c1c;
+        text-align: center;
+        font-size: 56px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin: 0;
+        padding: 0;
+    }
+    p {
+        color: #4b4b4b;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin: 18px 0 27.5px 0;
+    }
+    h2 {
+        color: #1c1c1c;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-bottom: 24px;
+    }
+}
+
+.registration-buttons {
+    button {
+        border: 0;
+        border-radius: 13px;
+        background: #f2f2f2;
+        width: 364px;
+        height: 52px;
+        margin-bottom: 24px;
+        background: #1c1c1c;
+        color: #fff;
+        text-align: center;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        cursor: pointer;
+        margin-bottom: 23.5px;
+    }
+}
+.icon {
+    border: 0;
+    margin-bottom: 24px;
+    border-radius: 13px;
+    background: #f2f2f2;
+    width: 364px;
+    height: 52px;
+    input {
+        border: 0;
+        color: #1c1c1c;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        width: 300px;
+        height: 46px;
+        background: #f2f2f2;
+        outline: none;
+    }
+    img {
+        background: #f2f2f2;
+        margin-right: 10px;
+    }
+}
+
+.registration-user {
+    display: flex;
+    width: 357.543px;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 24px;
+    flex-wrap: wrap;
+    button {
+        border-radius: 13px;
+        border: 1px solid #1c1c1c;
+        width: 166.272px;
+        height: 52px;
+        flex-shrink: 0;
+    }
+}
+
+.icon {
+    background-repeat: no-repeat;
+    background-position: right center;
+    font-size: 14px;
+    padding-left: 20px;
+}
