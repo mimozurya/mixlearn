@@ -20,7 +20,7 @@ function Homepage() {
     useEffect(() => {
         async function fetchData() {
             const articleResponce = await axios.get(
-                "https://6558a622e93ca47020a98ea9.mockapi.io/paragraph"
+                "https://655e414a9f1e1093c59acfec.mockapi.io/article"
             );
             setIsLoading(false);
             setArticleText(articleResponce.data);

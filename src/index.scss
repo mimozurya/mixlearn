@@ -2,15 +2,16 @@ html {
     margin: -8px;
     padding: -10px;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 .home-page {
-    background: #7b7b7b;
+    background: #6f73d4;
     min-height: 100vh;
 }
 
 .container-home {
-    background: #7b7b7b;
+    background: #6f73d4;
     box-sizing: border-box;
     font-family: "Golos Text", sans-serif;
     margin-left: 69px;
@@ -91,7 +92,7 @@ html {
         .notification-count {
             position: relative;
             border-radius: 22px;
-            background: #8f93ff;
+            background: #fb917a;
             left: 25px;
             width: 43px;
             height: 18px;
@@ -120,19 +121,23 @@ html {
                 .short-des {
                     position: relative;
                     border-radius: 20px;
-                    background: #8f93ff;
-                    width: 117px;
+                    background: #fb917a;
+                    width: 118px;
                     height: 45px;
                     top: 65px;
                     left: 190px;
                     p {
+                        margin: 0;
                         color: #fff;
                         font-size: 20px;
                         font-style: normal;
                         font-weight: 700;
                         line-height: 118.523%;
                         letter-spacing: -0.4px;
-                        margin: 11px 20px;
+                        margin: 11px 15px;
+                        b {
+                            font-size: 26px;
+                        }
                     }
                 }
                 #short-tagging,
@@ -199,7 +204,7 @@ html {
     }
     .news-article {
         border-radius: 69px;
-        background: #7b7b7b;
+        background: #6f73d4;
         margin: 25px 20px;
         .article-photo {
             padding: 0;

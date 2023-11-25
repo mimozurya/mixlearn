@@ -37,7 +37,9 @@ function News() {
                 <div className="courses-photo d-flex justify-center ">
                     <div className="courses-photo-block">
                         <div className="short-des">
-                            <p>85 мин</p>
+                            <p>
+                                <b>85</b> мин
+                            </p>
                         </div>
                         <div id="short-tagging">
                             <p>Учу ездить на шее у родителей до 35 лет!!!</p>
@@ -46,7 +48,9 @@ function News() {
                     </div>
                     <div className="courses-photo-block">
                         <div className="short-des">
-                            <p>105 мин</p>
+                            <p>
+                                <b>105</b> мин
+                            </p>
                         </div>
                         <div id="short-tagging2">
                             <p>Курс по черчению для бушующих архитекторов!</p>

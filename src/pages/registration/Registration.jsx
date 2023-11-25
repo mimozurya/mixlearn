@@ -56,7 +56,7 @@ function Registration() {
                             />
                         </div>
                         <div className="d-flex justify-between">
-                            {canGo ? (
+                            {!canGo ? (
                                 <Link to="/homepage" className="clean">
                                     <button>Удачи!</button>
                                 </Link>
