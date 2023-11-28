@@ -1,4 +1,4 @@
-.registration-container {
+.registrationContainer {
     background: #fff;
     box-sizing: border-box;
     font-family: "Golos Text", sans-serif;
@@ -61,12 +61,12 @@
     }
 }
 
-.registration-buttons {
+.registrationButtons {
     button {
         border: 0;
         border-radius: 13px;
         background: #f2f2f2;
-        width: 180px;
+        width: 390px;
         height: 52px;
         margin-bottom: 24px;
         background: #fb917a;
@@ -106,7 +106,7 @@
     }
 }
 
-.registration-user {
+.registrationUser {
     display: flex;
     width: 357.543px;
     align-items: flex-start;
@@ -119,6 +119,7 @@
         width: 166.272px;
         height: 52px;
         flex-shrink: 0;
+        background-color: #fff;
     }
 }
 

@@ -11,7 +11,7 @@ import Chats from "./Chats";
 import Calendar from "./Calendar";
 import Study from "./Study";
 
-function Homepage() {
+function Homepage({ user }) {
     const [articleText, setArticleText] = useState([]);
     const [articleTextId, setArticleTextId] = useState(1);
     const [isLoading, setIsLoading] = useState(true);
@@ -62,6 +62,7 @@ function Homepage() {
                     </div>
                 ) : (
                     <div className="container-home d-flex justify-around">
+                        {console.log(user)}
                         <Navigation />
                         <Routes>
                             <Route exact path="" element={<News />} />
