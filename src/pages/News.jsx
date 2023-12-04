@@ -1,5 +1,5 @@
 import Article from "../components/Article";
-import AppContext from "../context";
+import AppContext from "../MainContext";
 import { useContext } from "react";
 
 import Notification from "../components/Notification";

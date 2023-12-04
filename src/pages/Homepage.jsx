@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { useContext } from "react";
 import axios from "axios";
 import "../index.scss";
-import AppContext from "../context";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import AppContext from "../MainContext";
+import { Routes, Route, useParams } from "react-router-dom";
 import ContentLoader from "react-content-loader";
 
 import Navigation from "../components/Navigation";
@@ -10,12 +11,14 @@ import News from "./News";
 import Chats from "./Chats";
 import Calendar from "./Calendar";
 import Study from "./Study";
+import SiteUserContext from "../SiteUserContext";
 
-function Homepage({ user }) {
+function Homepage({ siteUser }) {
     const [articleText, setArticleText] = useState([]);
     const [articleTextId, setArticleTextId] = useState(1);
     const [isLoading, setIsLoading] = useState(true);
     const [onClickNotification, setOnClickNotification] = useState(false);
+    // const siteUser = props;
 
     useEffect(() => {
         async function fetchData() {
@@ -62,7 +65,7 @@ function Homepage({ user }) {
                     </div>
                 ) : (
                     <div className="container-home d-flex justify-around">
-                        {console.log(user)}
+                        {console.log(siteUser)}
                         <Navigation />
                         <Routes>
                             <Route exact path="" element={<News />} />

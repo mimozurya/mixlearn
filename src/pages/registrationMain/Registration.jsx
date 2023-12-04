@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 
 import Homepage from "../Homepage";
 import styles from "./Registration.module.scss";
+import SiteUserContext from "../../SiteUserContext";
 
 function Registration() {
     const [user, setUser] = useState([]);
@@ -25,108 +26,129 @@ function Registration() {
     }, []);
 
     const checkUserData = () => {
-        user.some(
+        const siteUser = user.find(
             (human) =>
                 String(human.username) === String(username) &&
                 String(human.password) === String(password)
-        ) && setCanGo(true);
+        );
+        if (siteUser) {
+            setSiteUser(siteUser);
+            setCanGo(true);
+        }
     };
 
     return (
-        <section className={styles.registrationContainer}>
-            <div className={`${styles.container} d-flex justify-center align-center`}>
-                <div className={`${styles.registration} d-flex flex-column align-center`}>
-                    <h1>Добро пожаловать!</h1>
-                    <p>В мир нескучной учебы - MixLearn</p>
-                    <div
-                        className={`${styles.registrationButtons} d-flex flex-column justify-center align-center`}
-                    >
-                        <div className={`${styles.icon} ${styles.username} d-flex align-center`}>
-                            <img src="../../src/assets/registration/user.svg" alt="user" />
-                            <input
-                                placeholder="Имя_пользователя"
-                                type="text"
-                                onChange={(event) => setUsername(event.target.value)}
-                                value={username}
-                            />
+        <SiteUserContext.Provider value={{}}>
+            <section className={styles.registrationContainer}>
+                <div className={`${styles.container} d-flex justify-center align-center`}>
+                    <div className={`${styles.registration} d-flex flex-column align-center`}>
+                        <h1>Добро пожаловать!</h1>
+                        <p>В мир нескучной учебы - MixLearn</p>
+                        <div
+                            className={`${styles.registrationButtons} d-flex flex-column justify-center align-center`}
+                        >
+                            <div
+                                className={`${styles.icon} ${styles.username} d-flex align-center`}
+                            >
+                                <img src="../../src/assets/registration/user.svg" alt="user" />
+                                <input
+                                    placeholder="Имя_пользователя"
+                                    type="text"
+                                    onChange={(event) => setUsername(event.target.value)}
+                                    value={username}
+                                />
+                            </div>
+                            <div
+                                className={`${styles.icon} ${styles.password} d-flex align-center`}
+                            >
+                                <img
+                                    src="../../src/assets/registration/password.svg"
+                                    alt="password"
+                                />
+                                <input
+                                    placeholder="Пароль"
+                                    type="password"
+                                    onChange={(event) => setPassword(event.target.value)}
+                                    value={password}
+                                />
+                            </div>
+                            <div className="d-flex justify-between">
+                                {console.log(siteUser)}
+                                {canGo ? (
+                                    <Link to="/homepage">
+                                        <button
+                                            onClick={() =>
+                                                console.log("малыш", siteUser) && (
+                                                    <Homepage siteUser={siteUser.id} />
+                                                )
+                                            }
+                                        >
+                                            Удачи
+                                        </button>
+                                        {/* <Homepage siteUser={siteUser} /> */}
+                                    </Link>
+                                ) : (
+                                    <>
+                                        <button onClick={checkUserData}>Войти</button>
+                                    </>
+                                )}
+                            </div>
                         </div>
-                        <div className={`${styles.icon} ${styles.password} d-flex align-center`}>
-                            <img src="../../src/assets/registration/password.svg" alt="password" />
-                            <input
-                                placeholder="Пароль"
-                                type="password"
-                                onChange={(event) => setPassword(event.target.value)}
-                                value={password}
-                            />
-                        </div>
-                        <div className="d-flex justify-between">
-                            {canGo ? (
-                                <Link to="/homepage" className="clean">
-                                    <button onClick={() => <Homepage user={siteUser} />}>
-                                        Удачи!
-                                    </button>
-                                </Link>
-                            ) : (
-                                <>
-                                    <button onClick={checkUserData}>Войти</button>
-                                </>
-                            )}
+                        <h2>Зарегистрироваться как:</h2>
+                        <div
+                            className={`${styles.registrationUser} d-flex justify-center align-center`}
+                        >
+                            <Link to="/registration/code_school_parents_kids">
+                                <button className={`${styles.user} cu-p`}>Ученик</button>
+                            </Link>
+
+                            <Link to="/registration/code_school_parents_kids">
+                                <button className={`${styles.user} cu-p`}>Родитель</button>
+                            </Link>
+
+                            <Link to="/registration/polling">
+                                <button className={`${styles.user} cu-p`}>Администрация</button>
+                            </Link>
+
+                            <Link to="/registration/polling">
+                                <button className={`${styles.user} cu-p`}>Учитель</button>
+                            </Link>
                         </div>
                     </div>
-                    <h2>Зарегистрироваться как:</h2>
-                    <div
-                        className={`${styles.registrationUser} d-flex justify-center align-center`}
-                    >
-                        <Link to="/registration/code_school_parents_kids">
-                            <button className={`${styles.user} cu-p`}>Ученик</button>
-                        </Link>
-
-                        <Link to="/registration/code_school_parents_kids">
-                            <button className={`${styles.user} cu-p`}>Родитель</button>
-                        </Link>
-
-                        <Link to="/registration/polling">
-                            <button className={`${styles.user} cu-p`}>Администрация</button>
-                        </Link>
-
-                        <Link to="/registration/polling">
-                            <button className={`${styles.user} cu-p`}>Учитель</button>
-                        </Link>
+                    <div className={styles.children}>
+                        <img
+                            src="../../src/assets/registration/children-with-cap.png"
+                            width={801}
+                            height={779}
+                        />
                     </div>
-                </div>
-                <div className={styles.children}>
                     <img
-                        src="../../src/assets/registration/children-with-cap.png"
-                        width={801}
-                        height={779}
+                        src="../../src/assets/registration/star.svg"
+                        width={447}
+                        height={447}
+                        className={styles.star}
+                    />
+                    <img
+                        src="../../src/assets/registration/circle-1.png"
+                        width={550}
+                        height={276}
+                        className={styles.circle}
+                    />
+                    <img
+                        src="../../src/assets/registration/blueStar.svg"
+                        width={200}
+                        height={200}
+                        className={styles.blueStar}
+                    />
+                    <img
+                        src="../../src/assets/registration/purpleStar.png"
+                        width={200}
+                        height={200}
+                        className={styles.purpleStar}
                     />
                 </div>
-                <img
-                    src="../../src/assets/registration/star.svg"
-                    width={447}
-                    height={447}
-                    className={styles.star}
-                />
-                <img
-                    src="../../src/assets/registration/circle-1.png"
-                    width={550}
-                    height={276}
-                    className={styles.circle}
-                />
-                <img
-                    src="../../src/assets/registration/blueStar.svg"
-                    width={200}
-                    height={200}
-                    className={styles.blueStar}
-                />
-                <img
-                    src="../../src/assets/registration/purpleStar.png"
-                    width={200}
-                    height={200}
-                    className={styles.purpleStar}
-                />
-            </div>
-        </section>
+            </section>
+        </SiteUserContext.Provider>
     );
 }
 
