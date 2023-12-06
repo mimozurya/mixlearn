@@ -1,0 +1,450 @@
+.codeContainer {
+    margin-top: 263px;
+    position: relative;
+    h2 {
+        color: #000;
+        font-family: Roboto;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        margin: 0;
+        margin-bottom: 36px;
+    }
+    p {
+        width: 593px;
+        color: #000;
+        text-align: center;
+        font-family: Roboto;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+        margin: 0;
+        margin-bottom: 36px;
+    }
+    div {
+        width: 1160px;
+        height: 70px;
+        border-radius: 5px;
+        border: 2px solid #858585;
+        background: #fff;
+        margin-bottom: 36px;
+        input {
+            margin-left: 36px;
+            width: 1000px;
+            height: 28px;
+            color: #858585;
+            font-family: Roboto;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            border: 0;
+            outline: none;
+        }
+        img {
+            margin-right: 20px;
+            margin-bottom: 5px;
+        }
+    }
+    button {
+        border-radius: 19px;
+        border: 2px solid #fb917a;
+        background: #fff;
+        width: 591px;
+        height: 67px;
+        color: #fb917a;
+        font-family: Roboto;
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+}
+// ---------------------------------------------------------------
+// 1-вверх-лево, 2-вверх-право, 3-низ-право, 4-низ-лево
+
+.codePicture1 {
+    position: absolute;
+    z-index: -2;
+    fill: linear-gradient(180deg, #a7b5ff 0%, #f3acff 100%);
+    top: 0px;
+    left: 0px;
+    opacity: 0.7;
+}
+.codePicture2 {
+    position: absolute;
+    z-index: -2;
+    fill: linear-gradient(180deg, #a7b5ff 0%, #f3acff 100%);
+    top: 0px;
+    right: 0px;
+    opacity: 0.5;
+}
+.codePicture3 {
+    position: absolute;
+    z-index: -2;
+    fill: linear-gradient(180deg, #a7b5ff 0%, #f3acff 100%);
+    bottom: 0px;
+    right: 0px;
+    opacity: 0.5;
+}
+.codePicture4 {
+    position: absolute;
+    z-index: -2;
+    fill: linear-gradient(180deg, #a7b5ff 0%, #f3acff 100%);
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.7;
+}
+
+// ----------------------------------------------------------------
+
+.registrationStudentParent {
+    width: 1160px;
+    margin: 55px 381px 140px 379px;
+    h2 {
+        margin: 0;
+        color: #000;
+        font-family: Roboto;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        margin-bottom: 12px;
+    }
+    p {
+        margin: 0;
+        color: #000;
+        text-align: center;
+        font-family: Roboto;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+        margin-bottom: 30px;
+    }
+    button {
+        margin: 0;
+        padding: 0;
+        border-radius: 19px;
+        border: 2px solid #fb917a;
+        background: #fff;
+        width: 591px;
+        height: 67px;
+        color: #fb917a;
+        font-family: Roboto;
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin-top: 36px;
+    }
+}
+
+.perc33Reg {
+    width: 376px;
+    margin-bottom: 4px;
+    p,
+    input {
+        margin: 0;
+        padding: 0;
+        text-align: start;
+    }
+    p {
+        color: #1c1c1c;
+        font-family: Roboto;
+        font-size: 26px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        margin-bottom: 5px;
+    }
+    div {
+        border-radius: 5px;
+        border: 2px solid #858585;
+        background: #fff;
+        width: 360px;
+        height: 50px;
+        input {
+            height: 28px;
+            margin-left: 36px;
+            color: #858585;
+            font-family: Roboto;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            border: 0;
+            outline: none;
+        }
+    }
+}
+
+.perc50Reg {
+    width: 543px;
+    margin-bottom: 4px;
+    p,
+    input {
+        margin: 0;
+        padding: 0;
+        text-align: start;
+    }
+    p {
+        color: #1c1c1c;
+        font-family: Roboto;
+        font-size: 26px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        margin-bottom: 5px;
+    }
+    div {
+        border-radius: 5px;
+        border: 2px solid #858585;
+        background: #fff;
+        width: 543px;
+        height: 50px;
+        input {
+            width: 400px;
+            height: 28px;
+            margin-left: 36px;
+            color: #858585;
+            font-family: Roboto;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            border: 0;
+            outline: none;
+        }
+    }
+}
+
+.perc100Reg {
+    width: 1160px;
+    margin-bottom: 5px;
+    p,
+    input {
+        margin: 0;
+        padding: 0;
+        text-align: start;
+    }
+    p {
+        color: #1c1c1c;
+        font-family: Roboto;
+        font-size: 26px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        margin-bottom: 5px;
+    }
+    div {
+        border-radius: 5px;
+        border: 2px solid #858585;
+        background: #fff;
+        width: 1160px;
+        height: 70px;
+        flex-shrink: 0;
+        input {
+            height: 28px;
+            margin-left: 36px;
+            color: #858585;
+            font-family: Roboto;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            width: 1000px;
+            border: 0;
+            outline: none;
+        }
+    }
+}
+
+.passwordContainer {
+    margin-top: 220px;
+    h2 {
+        margin: 0;
+        color: #000;
+        font-family: Roboto;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        margin-bottom: 48px;
+    }
+    div {
+        border-radius: 5px;
+        border: 2px solid #858585;
+        background: #fff;
+        width: 1160px;
+        height: 70px;
+        margin-bottom: 48px;
+        input {
+            color: #858585;
+            font-family: Roboto;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            margin-left: 36px;
+            width: 1000px;
+            border: 0;
+            outline: none;
+        }
+        img {
+            margin-right: 20px;
+            margin-bottom: 2px;
+        }
+    }
+    button {
+        border-radius: 19px;
+        border: 2px solid #fb917a;
+        background: #fff;
+        width: 591px;
+        height: 67px;
+        color: #fb917a;
+        font-family: Roboto;
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+}
+
+.successContainer {
+    margin-top: 250px;
+    h2 {
+        margin: 0;
+        color: #000;
+        font-family: Roboto;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        margin-bottom: 48px;
+    }
+    .firstSuccess {
+        width: 600px;
+        height: 70px;
+        border-radius: 19px;
+        border: 2px solid #fb917a;
+        background: #fff;
+        color: #fb917a;
+        font-family: Roboto;
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin-bottom: 23px;
+    }
+    .secondSuccess {
+        width: 600px;
+        height: 70px;
+        border-radius: 19px;
+        border: 2px solid #ff5733;
+        background: #fff;
+        color: #ff5733;
+        font-family: Roboto;
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin-top: 36px;
+    }
+    div {
+        p {
+            margin: 0;
+            color: #000;
+            font-family: Roboto;
+            font-size: 28px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            margin-right: 57px;
+            margin-left: 57px;
+        }
+    }
+}
+
+.mixLearnTeacher {
+    h2 {
+        margin: 0;
+        width: 840px;
+        color: #000;
+        text-align: center;
+        font-family: Roboto;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        margin-bottom: 80px;
+        margin-top: 305px;
+    }
+    .mixLearnFirstBtn {
+        border-radius: 19px;
+        border: 2px solid #33a03e;
+        background: #fff;
+        width: 240px;
+        height: 60px;
+        color: #33a03e;
+        font-family: Roboto;
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin-right: 120px;
+    }
+    .mixLearnSecondBtn {
+        width: 240px;
+        height: 60px;
+        border-radius: 19px;
+        border: 2px solid #fb2d00;
+        background: #fff;
+        color: #fb2d00;
+        font-family: Roboto;
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+}
+
+.noneOrganization {
+    margin-top: 260px;
+    h2 {
+        margin: 0;
+        color: #000;
+        font-family: Roboto;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        margin-bottom: 36px;
+    }
+    p {
+        color: #000;
+        text-align: center;
+        font-family: Roboto;
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+        margin: 0;
+        margin-bottom: 36px;
+    }
+    button {
+        border-radius: 19px;
+        border: 2px solid #fb917a;
+        background: #fff;
+        width: 600px;
+        height: 80px;
+        color: #fb917a;
+        font-family: Roboto;
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+}

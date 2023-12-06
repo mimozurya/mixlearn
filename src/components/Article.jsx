@@ -1,5 +1,5 @@
 import ContentLoader from "react-content-loader";
-import AppContext from "../context";
+import AppContext from "../MainContext";
 import { useContext } from "react";
 
 function Article() {

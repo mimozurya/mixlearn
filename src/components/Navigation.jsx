@@ -1,10 +1,11 @@
 import { useContext } from "react";
-import AppContext from "../context";
+import AppContext from "../MainContext";
 import ContentLoader, { List } from "react-content-loader";
 import { Link } from "react-router-dom";
+import SiteUserContext from "../SiteUserContext";
 
 function Navigation() {
-    const { pageSelect, setPageSelect, isLoading } = useContext(AppContext);
+    const { isLoading } = useContext(AppContext);
 
     return (
         <nav className="navigation d-flex flex-column align-center">
@@ -27,9 +28,13 @@ function Navigation() {
                 </ContentLoader>
             ) : (
                 <>
-                    <div className="avatar d-flex align-center justify-around">
-                        <img src="../src/assets/avatar.svg" width={131} height={131} />
-                        <p>Имя Фамилия</p>
+                    <div className="clear">
+                        <Link to="/profile" className="clear">
+                            <div className="avatar d-flex align-center justify-around">
+                                <img src="../src/assets/avatar.svg" width={130} height={130} />
+                                <p>Имя Фамилия</p>
+                            </div>
+                        </Link>
                     </div>
                     <div className="option">
                         <ul className="d-flex flex-column align-start clear">

@@ -1,0 +1,252 @@
+.profile {
+    background: #fff;
+}
+
+.avatar {
+    // border: 1px solid black;
+    margin-right: 100px;
+    .avatarFrame {
+        border-radius: 24.56px;
+        background: #1e1f26;
+        transform: skew(-0.1rad);
+        width: 400px;
+        height: 500px;
+        margin-top: 80px;
+        margin-left: 120px;
+        .avatarEllipse {
+            position: relative;
+            top: -93px;
+            border-top-left-radius: 24.56px;
+        }
+        .avatarBluepict {
+            position: relative;
+            left: 191px;
+            top: 100px;
+        }
+    }
+    .avatarFrameBottom {
+        .avatarHuman {
+            position: absolute;
+            top: 96px;
+            left: 195px;
+        }
+    }
+
+    .avatarFrameTop {
+        fill: #d4e6f7;
+        stroke-width: 0.614px;
+        stroke: #fff;
+        backdrop-filter: blur(75.77009963989258px);
+        width: 401px;
+        height: 271px;
+        position: absolute;
+        transform: skew(-0.1rad);
+        border-radius: 24.56px;
+        border-top-right-radius: 27px;
+        border-top-left-radius: 27px;
+        top: 310px;
+        left: 108px;
+        .frameTopHeader {
+            margin-left: 35px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            h2 {
+                color: #fff;
+                font-family: "Golos Text";
+                font-size: 28px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+                margin: 0;
+                margin-bottom: 5px;
+            }
+            p {
+                color: #fff;
+                font-family: Poppins;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                margin: -7px;
+                margin-left: 15px;
+                margin-bottom: 17px;
+            }
+        }
+        .frameTopInfo {
+            margin-left: 35px;
+            margin-bottom: 40px;
+            h3 {
+                margin: 0;
+                color: #fff;
+                font-family: "Golos Text";
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+                margin-bottom: 3px;
+            }
+            p {
+                margin: 0;
+                color: #fff;
+                font-family: "Golos Text";
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+            }
+        }
+        .frameTopFooter {
+            margin-left: 30px;
+            h3 {
+                margin: 0;
+                margin-top: -12px;
+                color: #fff;
+                font-family: "Golos Text";
+                font-size: 23px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+            }
+        }
+    }
+    .avatarLvl {
+        position: absolute;
+        top: 330px;
+        left: 390px;
+    }
+    .avatarReplacePhoto {
+        button {
+            width: 400px;
+            height: 70px;
+            border-radius: 19px;
+            background: #fb917a;
+            color: #fff;
+            font-family: "Golos Text";
+            font-size: 28px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            border: 0;
+            cursor: pointer;
+            margin-left: 92px;
+            margin-top: 15px;
+        }
+    }
+}
+
+.information {
+    // border: 1px solid gray;
+    margin-right: 120px;
+    header {
+        h2 {
+            margin: 0;
+            color: #000;
+            font-family: "Golos Text";
+            font-size: 48px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            margin-bottom: 20px;
+            margin-top: 50px;
+        }
+    }
+    p {
+        margin: 0;
+        color: #1c1c1c;
+        font-family: Roboto;
+        font-size: 26px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        margin-bottom: 2px;
+    }
+    .input50perc {
+        .input50 {
+            width: 520px;
+            height: 60px;
+            border-radius: 15px;
+            border: 2px solid #858585;
+            background: #fff;
+            margin-bottom: 18px;
+            input {
+                border: 0;
+                outline: none;
+                color: #858585;
+                font-family: Roboto;
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+                width: 450px;
+                margin-left: 30px;
+            }
+        }
+    }
+    .input100perc {
+        .input100 {
+            width: 1144px;
+            height: 60px;
+            border-radius: 15px;
+            border: 2px solid #858585;
+            background: #fff;
+            margin-bottom: 18px;
+            input {
+                border: 0;
+                outline: none;
+                color: #858585;
+                font-family: Roboto;
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+                margin-left: 30px;
+                width: 1075px;
+            }
+        }
+    }
+    .infoButtons {
+        button {
+            border-radius: 19px;
+            border: 2px solid #fb917a;
+            background: #fff;
+            width: 200px;
+            height: 70px;
+            margin-top: 25px;
+        }
+        .infoBtnReset {
+            color: #fb917a;
+            font-family: Roboto;
+            font-size: 28px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            margin-right: 50px;
+        }
+        .infoBtnSave {
+            background: #fb917a;
+            color: #fff;
+            font-family: Roboto;
+            font-size: 28px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+        }
+    }
+}
+.images {
+    img {
+        position: absolute;
+    }
+    .star {
+        top: 740px;
+        right: 1630px;
+    }
+    .circle {
+        top: 840px;
+        right: 920px;
+    }
+    .blueStar {
+        top: 850px;
+        right: -110px;
+    }
+}

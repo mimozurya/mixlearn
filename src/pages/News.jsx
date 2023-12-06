@@ -1,9 +1,12 @@
 import Article from "../components/Article";
-import AppContext from "../context";
+import AppContext from "../MainContext";
 import { useContext } from "react";
 
+import Notification from "../components/Notification";
+
 function News() {
-    const { isLoading, setArticleTextId } = useContext(AppContext);
+    const { isLoading, setArticleTextId, onClickNotification, setOnClickNotification } =
+        useContext(AppContext);
 
     return (
         <section className="information">
@@ -12,7 +15,10 @@ function News() {
                     <img src="../src/assets/search.svg" alt="search" />
                     <input type="text" placeholder="Поиск..." />
                 </div>
-                <div className="d-flex flex-column align-center">
+                <div
+                    className="d-flex flex-column align-center"
+                    onClick={() => setOnClickNotification(!onClickNotification)}
+                >
                     <img src="../src/assets/bell.svg" alt="notification" className="notification" />
                     <div className="notification-count">
                         <p>12</p>
@@ -27,11 +33,13 @@ function News() {
                 />
             </div>
             <div className="courses">
-                <h2 className="mb-40">Рекомендованные курсы только для тебя</h2>
+                <h2>Рекомендованные курсы только для тебя</h2>
                 <div className="courses-photo d-flex justify-center ">
                     <div className="courses-photo-block">
                         <div className="short-des">
-                            <p>85 мин</p>
+                            <p>
+                                <b>85</b> мин
+                            </p>
                         </div>
                         <div id="short-tagging">
                             <p>Учу ездить на шее у родителей до 35 лет!!!</p>
@@ -40,7 +48,9 @@ function News() {
                     </div>
                     <div className="courses-photo-block">
                         <div className="short-des">
-                            <p>105 мин</p>
+                            <p>
+                                <b>105</b> мин
+                            </p>
                         </div>
                         <div id="short-tagging2">
                             <p>Курс по черчению для бушующих архитекторов!</p>
@@ -49,6 +59,7 @@ function News() {
                     </div>
                 </div>
             </div>
+            {onClickNotification && <Notification />}
             <div className="news">
                 <h2>Новости твоей школы!</h2>
                 <div className="news-selector d-flex justify-center">
@@ -99,9 +110,7 @@ function News() {
                     </div>
                 </div>
             </div>
-            <div className="news-article d-flex justify-center">
-                {!isLoading ? <Article /> : console.log("жди")}
-            </div>
+            <div className="news-article d-flex justify-center">{!isLoading && <Article />}</div>
         </section>
     );
 }
