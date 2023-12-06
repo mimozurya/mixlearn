@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { useContext } from "react";
 import axios from "axios";
 import "../index.scss";
 import AppContext from "../MainContext";
-import { Routes, Route, useParams } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import ContentLoader from "react-content-loader";
 
 import Navigation from "../components/Navigation";
@@ -11,14 +10,18 @@ import News from "./News";
 import Chats from "./Chats";
 import Calendar from "./Calendar";
 import Study from "./Study";
-import SiteUserContext from "../SiteUserContext";
+import { useSiteUser } from "../hooks/useSiteUser";
+import { useDispatch, useSelector } from "react-redux";
 
-function Homepage({ siteUser }) {
+function Homepage(props) {
     const [articleText, setArticleText] = useState([]);
     const [articleTextId, setArticleTextId] = useState(1);
     const [isLoading, setIsLoading] = useState(true);
     const [onClickNotification, setOnClickNotification] = useState(false);
-    // const siteUser = props;
+
+    const dispatch = useDispatch();
+    const userId = useSelector((state) => state.id);
+    console.log(userId, "home");
 
     useEffect(() => {
         async function fetchData() {
@@ -65,7 +68,7 @@ function Homepage({ siteUser }) {
                     </div>
                 ) : (
                     <div className="container-home d-flex justify-around">
-                        {console.log(siteUser)}
+                        {/* {console.log(siteUser, "homepage")} */}
                         <Navigation />
                         <Routes>
                             <Route exact path="" element={<News />} />
