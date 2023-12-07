@@ -4,23 +4,23 @@ import "../index.scss";
 import AppContext from "../MainContext";
 import { Routes, Route } from "react-router-dom";
 import ContentLoader from "react-content-loader";
+import { useDispatch, useSelector } from "react-redux";
 
 import Navigation from "../components/Navigation";
 import News from "./News";
 import Chats from "./Chats";
 import Calendar from "./Calendar";
 import Study from "./Study";
-import { useSiteUser } from "../hooks/useSiteUser";
-import { useDispatch, useSelector } from "react-redux";
 
-function Homepage(props) {
+function Homepage() {
     const [articleText, setArticleText] = useState([]);
     const [articleTextId, setArticleTextId] = useState(1);
     const [isLoading, setIsLoading] = useState(true);
     const [onClickNotification, setOnClickNotification] = useState(false);
+    const [siteUser, setSiteUser] = useState({});
 
     const dispatch = useDispatch();
-    const userId = useSelector((state) => state.id);
+    const userId = useSelector((state) => state.id.id);
     console.log(userId, "home");
 
     useEffect(() => {
@@ -28,8 +28,13 @@ function Homepage(props) {
             const articleResponce = await axios.get(
                 "https://655e414a9f1e1093c59acfec.mockapi.io/article"
             );
+            const userResponce = await axios.get(
+                `https://655e414a9f1e1093c59acfec.mockapi.io/user/${userId}`
+            );
+
             setIsLoading(false);
             setArticleText(articleResponce.data);
+            setSiteUser(userResponce.data);
         }
 
         fetchData();
@@ -42,6 +47,7 @@ function Homepage(props) {
                 articleTextId,
                 isLoading,
                 onClickNotification,
+                siteUser,
                 setArticleTextId,
                 setOnClickNotification,
             }}
@@ -68,7 +74,7 @@ function Homepage(props) {
                     </div>
                 ) : (
                     <div className="container-home d-flex justify-around">
-                        {/* {console.log(siteUser, "homepage")} */}
+                        {console.log(siteUser)}
                         <Navigation />
                         <Routes>
                             <Route exact path="" element={<News />} />

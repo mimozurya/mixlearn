@@ -13,11 +13,9 @@ function Registration() {
     const [password, setPassword] = useState("");
     const { siteUser, setSiteUser } = useSiteUser();
     const [canGo, setCanGo] = useState(false);
-    const [tempID, setTempID] = useState(null);
 
     const dispatch = useDispatch();
     const id = useSelector((state) => state.id);
-    console.log(id, "reg");
 
     const addId = () => {
         dispatch({ type: "ADD_ID", payload: +siteUser });
@@ -74,7 +72,6 @@ function Registration() {
                             />
                         </div>
                         <div className="d-flex justify-between">
-                            {/* {console.log(+siteUser, "registration")} */}
                             {canGo ? (
                                 <Link to="/homepage">
                                     <button onClick={() => addId()}>Удачи</button>

@@ -1,7 +1,30 @@
 import "./RegStage.scss";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
 
 function RegStudentParent2() {
+    const [firstName, setFirstName] = useState();
+    const [surName, setSurName] = useState();
+    const [login, setLogin] = useState();
+
+    const dispatch = useDispatch();
+    const newUser = useSelector((state) => state.user);
+    console.log(newUser);
+
+    const addName = () => {
+        dispatch({ type: "ADD_NAME", payload: `${firstName} ${surName}` });
+    };
+
+    const addLogin = () => {
+        dispatch({ type: "ADD_USERNAME", payload: login });
+    };
+
+    const releaseData = () => {
+        addName();
+        addLogin();
+    };
+
     return (
         <>
             <div className="registrationStudentParent d-flex flex-column align-center">
@@ -14,19 +37,31 @@ function RegStudentParent2() {
                     <div className="perc33Reg">
                         <p>Фамилия</p>
                         <div className="d-flex align-center justify-between">
-                            <input type="text" placeholder="Меслер" />
+                            <input
+                                type="text"
+                                placeholder="Меслер"
+                                onChange={(e) => setSurName(e.target.value)}
+                            />
                         </div>
                     </div>
                     <div className="perc33Reg">
                         <p>Имя</p>
                         <div className="d-flex align-center justify-between">
-                            <input type="text" placeholder="Рома" />
+                            <input
+                                type="text"
+                                placeholder="Рома"
+                                onChange={(e) => setFirstName(e.target.value)}
+                            />
                         </div>
                     </div>
                     <div className="perc33Reg">
                         <p>Отчество</p>
                         <div className="d-flex align-center justify-between">
-                            <input type="text" placeholder="Александрович" />
+                            <input
+                                type="text"
+                                placeholder="Александрович"
+                                onChange={(e) => setLogin(e.target.value)}
+                            />
                         </div>
                     </div>
                     <div className="perc100Reg">
@@ -67,7 +102,9 @@ function RegStudentParent2() {
                     </div>
                 </div>
                 <Link to="/registration/password">
-                    <button className="cu-p">Дальше</button>
+                    <button className="cu-p" onClick={() => releaseData()}>
+                        Дальше
+                    </button>
                 </Link>
             </div>
             <div className="codePicture1">

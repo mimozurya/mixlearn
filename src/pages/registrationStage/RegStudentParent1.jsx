@@ -1,7 +1,16 @@
+import { useState } from "react";
 import "./RegStage.scss";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 
 function RegStudentParent1() {
+    const dispatch = useDispatch();
+    const newUser = useSelector((state) => state.user);
+
+    const addCategory = () => {
+        dispatch({ type: "ADD_CATEGORY", payload: "Ученик/родитель" });
+    };
+
     return (
         <>
             <div className="codeContainer d-flex flex-column align-center">
@@ -12,7 +21,9 @@ function RegStudentParent1() {
                     <img src="../src/assets/subRegistration/icon-success.svg" alt="iconSuccess" />
                 </div>
                 <Link to="/registration/parents_kids">
-                    <button className="cu-p">Дальше</button>
+                    <button className="cu-p" onClick={() => addCategory()}>
+                        Дальше
+                    </button>
                 </Link>
             </div>
             <div className="codePicture2">
