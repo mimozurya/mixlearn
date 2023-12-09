@@ -1,7 +1,15 @@
 import "./RegStage.scss";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 
 function RegTeacherAdmin2_0() {
+    const dispatch = useDispatch();
+    const newUser = useSelector((state) => state.user);
+
+    const deleteCategory = () => {
+        dispatch({ type: "ADD_CATEGORY", payload: "" });
+    };
+
     return (
         <>
             <div className="noneOrganization d-flex align-center flex-column">
@@ -9,7 +17,9 @@ function RegTeacherAdmin2_0() {
                 <p>Обратитесь в техническую поддержку MixLearn</p>
                 <p>support@mixlearn.ru</p>
                 <Link to="/">
-                    <button className="cu-p">Вернуться на главную страницу</button>
+                    <button className="cu-p" onClick={() => deleteCategory()}>
+                        Вернуться на главную страницу
+                    </button>
                 </Link>
             </div>
             <div className="codePicture2">
