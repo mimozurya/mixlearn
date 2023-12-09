@@ -1,8 +1,7 @@
 import { useContext } from "react";
 import AppContext from "../MainContext";
-import ContentLoader, { List } from "react-content-loader";
+import ContentLoader from "react-content-loader";
 import { Link } from "react-router-dom";
-import SiteUserContext from "../SiteUserContext";
 
 function Navigation() {
     const { isLoading, siteUser } = useContext(AppContext);

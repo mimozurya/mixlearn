@@ -1,140 +1,107 @@
-function Chats() {
-    return (
-        <section className="information-chat d-flex align-center flex-column">
-            <header className="d-flex justify-between align-center">
-                <img
-                    src="../src/assets/chat-logotype.svg"
-                    alt="chat-logotype"
-                    className="chat-logotype"
-                />
-                <h1>MixMessage</h1>
-                <div className="chat-header-userTo d-flex justify-center align-center">
-                    <b>Человек</b>
-                    <p>был(-а) в сети 5 минут назад</p>
-                </div>
-                <div className="chat-header-setting d-flex justify-center align-center">
-                    <img src="../src/assets/chat-setting.svg" alt="chat-setting" />
-                    <img src="../src/assets/chat-about.svg" alt="chat-about" />
-                    <img src="../src/assets/avatar.svg" alt="avatar" width={32} height={32} />
-                </div>
-            </header>
-            <div className="d-flex">
-                <div className="chat-left-users d-flex flex-column">
-                    <div className="chat-search d-flex justify-start align-center">
-                        <img src="../src/assets/search.svg" alt="search" width={20} height={20} />
-                        <input type="text" placeholder="Search" />
-                    </div>
+import { useDispatch, useSelector } from "react-redux";
+import { ChatLeft } from "../components/ChatLeft";
+import { ChatRight } from "../components/ChatRight";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
-                    <div className="chat-left-user d-flex align-center justify-between">
-                        <img src="../src/assets/avatar.svg" alt="avatar" width={40} height={40} />
-                        <div className="chat-left-userPlaceholder">
-                            <h3>Kathryn Cooper</h3>
-                            <h4>Have you ever heard of..</h4>
-                        </div>
-                        <div className="chat-left-userDate d-flex flex-column align-end">
-                            <p>6:34 PM</p>
+import ChatContext from "../ChatContext";
+
+function Chats() {
+    const [siteUser, setSiteUser] = useState({});
+    const [arrUsers, setArrUsers] = useState([]);
+    const [messages, setMessages] = useState([]);
+
+    const [fromMessageID, setFromMessageID] = useState([]);
+    const [toMessageID, setToMessageID] = useState([]);
+    const [usersToLeftChat, setUsersToLeftChat] = useState([]);
+
+    const [idToRightChat, setIdToRightChat] = useState(-1);
+
+    const [loading, setLoading] = useState(true);
+
+    const dispatch = useDispatch();
+    const siteUserID = useSelector((state) => state.id.id);
+
+    useEffect(() => {
+        async function fetchDataChats() {
+            const siteUserResponce = await axios.get(
+                `https://655e414a9f1e1093c59acfec.mockapi.io/user/${siteUserID}`
+            );
+            const usersResponce = await axios.get(
+                "https://655e414a9f1e1093c59acfec.mockapi.io/user"
+            );
+            const messagesResponce = await axios.get(
+                "https://6572d16a192318b7db4110ca.mockapi.io/message"
+            );
+
+            setSiteUser(siteUserResponce.data);
+            setArrUsers(usersResponce.data.filter((user) => +user.id !== +siteUserID));
+            setMessages(
+                messagesResponce.data.filter(
+                    (message) =>
+                        +message.idMemberFrom === +siteUserID || +message.idMemberTo === +siteUserID
+                )
+            );
+        }
+
+        fetchDataChats();
+    }, []);
+
+    useEffect(() => {
+        setFromMessageID(Object.keys(messages).map((key) => messages[key].idMemberFrom));
+        setToMessageID(Object.keys(messages).map((key) => messages[key].idMemberTo));
+        setUsersToLeftChat(
+            arrUsers.filter((user) =>
+                [...new Set([...fromMessageID, ...toMessageID])].includes(user.id)
+            )
+        );
+        setLoading(false);
+    }, [messages && arrUsers, loading]);
+
+    return (
+        <ChatContext.Provider
+            value={{
+                messages,
+                usersToLeftChat,
+                idToRightChat,
+                setIdToRightChat,
+            }}
+        >
+            <section className="information-chat d-flex align-center flex-column">
+                {loading ? (
+                    <h2>прив</h2>
+                ) : (
+                    <>
+                        <header className="d-flex justify-between align-center">
                             <img
-                                src="../src/assets/chat-pin.svg"
-                                alt="chat-pin"
-                                width={20}
-                                height={20}
+                                src="../src/assets/chat-logotype.svg"
+                                alt="chat-logotype"
+                                className="chat-logotype"
                             />
-                        </div>
-                    </div>
-                    <div className="chat-left-user d-flex align-center justify-between">
-                        <img src="../src/assets/avatar.svg" alt="avatar" width={40} height={40} />
-                        <div className="chat-left-userPlaceholder">
-                            <h3>Kathryn Cooper</h3>
-                            <h4>Thank you!</h4>
-                        </div>
-                        <div className="chat-left-userDate d-flex flex-column align-end">
-                            <p>6:34 PM</p>
-                            <img
-                                src="../src/assets/chat-pin.svg"
-                                alt="chat-pin"
-                                width={20}
-                                height={20}
-                            />
-                        </div>
-                    </div>
-                    <div className="chat-left-user d-flex align-center justify-between">
-                        <img src="../src/assets/avatar.svg" alt="avatar" width={40} height={40} />
-                        <div className="chat-left-userPlaceholder">
-                            <h3>Arthur Cooper</h3>
-                            <h4>Did you hear..</h4>
-                        </div>
-                        <div className="chat-left-userDate d-flex flex-column align-end">
-                            <p>1:21 AM</p>
-                            <img
-                                src="../src/assets/chat-pin.svg"
-                                alt="chat-pin"
-                                width={20}
-                                height={20}
-                            />
-                        </div>
-                    </div>
-                </div>
-                <div className="chat-right">
-                    <div className="chat-message-from d-flex align-end">
-                        <img src="../src/assets/avatar.svg" alt="avatar" width={40} height={40} />
-                        <div className="message-form-from d-flex flex-column align-start">
-                            <h3>Ceaser</h3>
-                            <p>Come on, what's her name?</p>
-                            <span>10:36 PM</span>
-                        </div>
-                    </div>
-                    <div className="chat-message-to d-flex align-center justify-end">
-                        <div className="message-form-from d-flex flex-column align-end">
-                            <p>
-                                Well, there is this one girl. I’ve had a crush on her ever since I
-                                can remember. But I’m pretty sure she didn’t know I was alive until
-                                the reaping
-                            </p>
-                            <span>10:36 PM</span>
-                        </div>
-                    </div>
-                    <div className="chat-message-from d-flex align-end">
-                        <img src="../src/assets/avatar.svg" alt="avatar" width={40} height={40} />
-                        <div className="message-form-from d-flex flex-column align-start">
-                            <h3>Ceaser</h3>
-                            <p>She has another fellow?</p>
-                            <span>1:05 PM</span>
-                        </div>
-                    </div>
-                    <div className="chat-message-to d-flex align-center justify-end">
-                        <div className="message-form-from d-flex flex-column align-end">
-                            <p>I don’t know, but a lot of boys like her</p>
-                            <span>8:33 PM</span>
-                        </div>
-                    </div>
-                    <div className="chat-send-message-form d-flex flex-column">
-                        <div className="d-flex justify-center">
-                            <input type="text" placeholder="Message" />
-                        </div>
-                        <div className="chat-outline"></div>
-                        <div className="chat-send-icons d-flex flex justify-between">
-                            <div>
+                            <h1>MixMessage</h1>
+                            <div className="chat-header-userTo d-flex justify-center align-center">
+                                <b>Человек</b>
+                                <p>был(-а) в сети 5 минут назад</p>
+                            </div>
+                            <div className="chat-header-setting d-flex justify-center align-center">
+                                <img src="../src/assets/chat-setting.svg" alt="chat-setting" />
+                                <img src="../src/assets/chat-about.svg" alt="chat-about" />
                                 <img
-                                    src="../src/assets/chat-voice.svg"
-                                    alt="chat-voice"
-                                    width={32}
-                                    height={32}
-                                />
-                                <img
-                                    src="../src/assets/chat-paperclip.svg"
+                                    src="../src/assets/avatar.svg"
                                     alt="avatar"
                                     width={32}
                                     height={32}
                                 />
                             </div>
-                            <button>
-                                <p>Отправить</p>
-                            </button>
+                        </header>
+                        <div className="d-flex">
+                            <ChatLeft />
+                            <ChatRight />
                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+                    </>
+                )}
+            </section>
+        </ChatContext.Provider>
     );
 }
 

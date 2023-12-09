@@ -85,13 +85,13 @@ function Profile() {
                             <div className={styles.input50perc}>
                                 <p>Имя</p>
                                 <div className={`${styles.input50} d-flex`}>
-                                    <input type="text" placeholder="Рома" />
+                                    <input type="text" placeholder={user.name.split(" ")[0]} />
                                 </div>
                             </div>
                             <div className={styles.input50perc}>
                                 <p>Фамилия</p>
                                 <div className={`${styles.input50} d-flex`}>
-                                    <input type="text" placeholder="Меслер" />
+                                    <input type="text" placeholder={user.name.split(" ")[1]} />
                                 </div>
                             </div>
                             <div className={styles.input100perc}>
@@ -130,7 +130,7 @@ function Profile() {
                             <div className={styles.input100perc}>
                                 <p>Пароль</p>
                                 <div className={`${styles.input100} d-flex`}>
-                                    <input type="text" placeholder="**********" />
+                                    <input type="text" placeholder="***" />
                                 </div>
                             </div>
                         </div>

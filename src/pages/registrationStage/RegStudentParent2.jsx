@@ -55,11 +55,11 @@ function RegStudentParent2() {
                         </div>
                     </div>
                     <div className="perc33Reg">
-                        <p>Отчество</p>
+                        <p>Логин</p>
                         <div className="d-flex align-center justify-between">
                             <input
                                 type="text"
-                                placeholder="Александрович"
+                                placeholder="roman22"
                                 onChange={(e) => setLogin(e.target.value)}
                             />
                         </div>
