@@ -3,11 +3,13 @@ import ChatContext from "../ChatContext";
 
 import { MessageFrom } from "./MessageFrom";
 import { MessageTo } from "./MessageTo";
+import axios from "axios";
 
 export const ChatRight = () => {
     const [messagesWithPeople, setMessagesWithPeople] = useState([]);
+    const [textMessage, setTextMessage] = useState("");
 
-    const { messages, idToRightChat } = useContext(ChatContext);
+    const { messages, idToRightChat, siteUserID } = useContext(ChatContext);
 
     useEffect(() => {
         setMessagesWithPeople(
@@ -21,19 +23,48 @@ export const ChatRight = () => {
 
     console.log(messagesWithPeople);
 
+    const sendMessage = () => {
+        const sms = {
+            idMemberFrom: `${siteUserID}`,
+            idMemberTo:
+                messagesWithPeople.find((message) => !message.idMemberFrom.includes(siteUserID))
+                    .idMemberFrom ||
+                messagesWithPeople.find((message) => !message.idMemberTo.includes(siteUserID))
+                    .idMemberTo,
+            text: textMessage,
+        };
+
+        setMessagesWithPeople([...messagesWithPeople, sms]);
+        setTextMessage("");
+
+        try {
+            axios.post("https://6572d16a192318b7db4110ca.mockapi.io/message", sms);
+        } catch (error) {
+            alert("Ошибка при отправке сообщения");
+            console.log(error);
+        }
+    };
+
     return (
         <div className="chat-right">
-            {messagesWithPeople.map((message) =>
-                +message.idMemberFrom === +idToRightChat ? (
-                    <MessageFrom message={message} />
-                ) : (
-                    <MessageTo message={message} />
-                )
-            )}
+            <div className="chatRightContainer">
+                {messagesWithPeople.map((message) =>
+                    +message.idMemberFrom === +idToRightChat ? (
+                        <MessageFrom message={message} />
+                    ) : (
+                        <MessageTo message={message} />
+                    )
+                )}
+            </div>
 
             <div className="chat-send-message-form d-flex flex-column">
                 <div className="d-flex justify-center">
-                    <input type="text" placeholder="Message" />
+                    <input
+                        type="text"
+                        placeholder="Message"
+                        onChange={(e) => setTextMessage(e.target.value)}
+                        value={textMessage}
+                    />
                 </div>
                 <div className="chat-outline"></div>
                 <div className="chat-send-icons d-flex flex justify-between">
@@ -51,7 +82,7 @@ export const ChatRight = () => {
                             height={32}
                         />
                     </div>
-                    <button>
+                    <button onClick={sendMessage} className="cu-p">
                         <p>Отправить</p>
                     </button>
                 </div>

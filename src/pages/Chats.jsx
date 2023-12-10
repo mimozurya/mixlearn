@@ -27,11 +27,11 @@ function Chats() {
             const siteUserResponce = await axios.get(
                 `https://655e414a9f1e1093c59acfec.mockapi.io/user/${siteUserID}`
             );
-            const usersResponce = await axios.get(
-                "https://655e414a9f1e1093c59acfec.mockapi.io/user"
-            );
             const messagesResponce = await axios.get(
                 "https://6572d16a192318b7db4110ca.mockapi.io/message"
+            );
+            const usersResponce = await axios.get(
+                "https://655e414a9f1e1093c59acfec.mockapi.io/user"
             );
 
             setSiteUser(siteUserResponce.data);
@@ -64,6 +64,7 @@ function Chats() {
                 messages,
                 usersToLeftChat,
                 idToRightChat,
+                siteUserID,
                 setIdToRightChat,
             }}
         >
