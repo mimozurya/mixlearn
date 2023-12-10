@@ -505,6 +505,33 @@ html {
         }
     }
 }
+:root {
+    --scrollbarBg: #6f73d4;
+    --scrollbarThumb: rgba(255, 255, 255, 0.8);
+    --scrollbarWidth: 12px;
+    --scrollbarBorder: 3px solid var(--scrollbarBg);
+    --scrollbarBorderRadius: calc(var(--scrollbarWidth) / 2);
+}
+
+.chatRightContainer {
+    max-height: 500px;
+    overflow-y: auto;
+    scrollbar-width: var(--scrollbarWidth);
+    scrollbar-color: var(--scrollbarThumb) var(--scrollbarBg);
+}
+.chatRightContainer::-webkit-scrollbar {
+    width: var(--scrollbarWidth);
+}
+.chatRightContainer::-webkit-scrollbar-track {
+    background: var(--scrollbarBg);
+    border-radius: var(--scrollbarBorderRadius);
+}
+.chatRightContainer::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbarThumb);
+    border-radius: var(--scrollbarBorderRadius);
+    border: var(--scrollbarBorder);
+}
+
 .information-calendar {
     width: 1400px;
     border-radius: 50px;

@@ -11,7 +11,7 @@ export const ChatLeft = () => {
                 <input type="text" placeholder="Search" />
             </div>
 
-            {usersToLeftChat.map((user, key) => (
+            {usersToLeftChat.map((user) => (
                 <div
                     className="chat-left-user d-flex align-center justify-between cu-p"
                     onClick={() => setIdToRightChat(user.id)}
