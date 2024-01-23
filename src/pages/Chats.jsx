@@ -25,31 +25,31 @@ function Chats() {
     useEffect(() => {
         async function fetchDataChats() {
             const siteUserResponce = await axios.get(
-                `https://655e414a9f1e1093c59acfec.mockapi.io/user/${siteUserID}`
+                `http://79.174.83.190:8080/user/${siteUserID}`
             );
-            const messagesResponce = await axios.get(
-                "https://6572d16a192318b7db4110ca.mockapi.io/message"
-            );
-            const usersResponce = await axios.get(
-                "https://655e414a9f1e1093c59acfec.mockapi.io/user"
-            );
+            const messagesResponce = await axios.get("http://79.174.83.190:8080/messages");
+            const usersResponce = await axios.get("http://79.174.83.190:8080/users");
 
             setSiteUser(siteUserResponce.data);
             setArrUsers(usersResponce.data.filter((user) => +user.id !== +siteUserID));
             setMessages(
                 messagesResponce.data.filter(
                     (message) =>
-                        +message.idMemberFrom === +siteUserID || +message.idMemberTo === +siteUserID
+                        message.memberFrom === +siteUserID || message.memberTo === +siteUserID
+                    // message.idMemberFrom === +siteUserID || message.idMemberTo === +siteUserID
                 )
             );
         }
 
         fetchDataChats();
+        console.log(messages, "сообщения");
     }, []);
 
     useEffect(() => {
-        setFromMessageID(Object.keys(messages).map((key) => messages[key].idMemberFrom));
-        setToMessageID(Object.keys(messages).map((key) => messages[key].idMemberTo));
+        // setFromMessageID(Object.keys(messages).map((key) => messages[key].idMemberFrom));
+        // setToMessageID(Object.keys(messages).map((key) => messages[key].idMemberTo));
+        setFromMessageID(Object.keys(messages).map((key) => messages[key].memberFrom));
+        setToMessageID(Object.keys(messages).map((key) => messages[key].memberTo));
         setUsersToLeftChat(
             arrUsers.filter((user) =>
                 [...new Set([...fromMessageID, ...toMessageID])].includes(user.id)

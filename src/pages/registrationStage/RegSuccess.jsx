@@ -17,10 +17,7 @@ function RegSuccess() {
 
     useEffect(() => {
         async function fetchData() {
-            const { data } = await axios.post(
-                "https://655e414a9f1e1093c59acfec.mockapi.io/user",
-                newUser
-            );
+            const { data } = await axios.post("http://79.174.83.190:8080/user", newUser);
 
             setTempUserID(data.id);
         }

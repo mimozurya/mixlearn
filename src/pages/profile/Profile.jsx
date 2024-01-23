@@ -13,9 +13,7 @@ function Profile() {
 
     useEffect(() => {
         async function fetchDataUser() {
-            const userResponceProfile = await axios.get(
-                `https://655e414a9f1e1093c59acfec.mockapi.io/user/${userId}`
-            );
+            const userResponceProfile = await axios.get(`http://79.174.83.190:8080/user/${userId}`);
 
             setUser(userResponceProfile.data);
             setIsLoading(false);

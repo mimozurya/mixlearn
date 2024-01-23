@@ -28,9 +28,7 @@ function Homepage() {
             const articleResponce = await axios.get(
                 "https://655e414a9f1e1093c59acfec.mockapi.io/article"
             );
-            const userResponce = await axios.get(
-                `https://655e414a9f1e1093c59acfec.mockapi.io/user/${userId}`
-            );
+            const userResponce = await axios.get(`http://79.174.83.190:8080/user/${userId}`);
 
             setIsLoading(false);
             setArticleText(articleResponce.data);

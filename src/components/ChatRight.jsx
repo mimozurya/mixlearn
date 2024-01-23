@@ -15,8 +15,11 @@ export const ChatRight = () => {
         setMessagesWithPeople(
             messages.filter(
                 (message) =>
-                    message.idMemberFrom.includes(idToRightChat) ||
-                    message.idMemberTo.includes(idToRightChat)
+                    message.memberFrom === idToRightChat || message.memberTo === idToRightChat
+                // message.memberFrom.includes(idToRightChat) ||
+                // message.memberTo.includes(idToRightChat)
+                // message.idMemberFrom.includes(idToRightChat) ||
+                // message.idMemberTo.includes(idToRightChat)
             )
         );
     }, [idToRightChat]);
@@ -25,12 +28,18 @@ export const ChatRight = () => {
 
     const sendMessage = () => {
         const sms = {
-            idMemberFrom: `${siteUserID}`,
-            idMemberTo:
-                messagesWithPeople.find((message) => !message.idMemberFrom.includes(siteUserID))
-                    .idMemberFrom ||
-                messagesWithPeople.find((message) => !message.idMemberTo.includes(siteUserID))
-                    .idMemberTo,
+            // idMemberFrom: `${siteUserID}`,
+            // idMemberTo:
+            //     messagesWithPeople.find((message) => !message.idMemberFrom.includes(siteUserID))
+            //         .idMemberFrom ||
+            //     messagesWithPeople.find((message) => !message.idMemberTo.includes(siteUserID))
+            //         .idMemberTo,
+            // text: textMessage,
+            memberFrom: `${siteUserID}`,
+            memberTo:
+                messagesWithPeople.find((message) => message.memberFrom !== siteUserID)
+                    .memberFrom ||
+                messagesWithPeople.find((message) => message.memberTo !== siteUserID).memberTo,
             text: textMessage,
         };
 
@@ -38,7 +47,8 @@ export const ChatRight = () => {
         setTextMessage("");
 
         try {
-            axios.post("https://6572d16a192318b7db4110ca.mockapi.io/message", sms);
+            // axios.post("https://6572d16a192318b7db4110ca.mockapi.io/message", sms);
+            axios.post("http://79.174.83.190:8080/message", sms);
         } catch (error) {
             alert("Ошибка при отправке сообщения");
             console.log(error);
@@ -48,8 +58,15 @@ export const ChatRight = () => {
     return (
         <div className="chat-right">
             <div className="chatRightContainer">
-                {messagesWithPeople.map((message) =>
+                {/* {messagesWithPeople.map((message) =>
                     +message.idMemberFrom === +idToRightChat ? (
+                        <MessageFrom message={message} />
+                    ) : (
+                        <MessageTo message={message} />
+                    )
+                )} */}
+                {messagesWithPeople.map((message) =>
+                    +message.memberFrom === +idToRightChat ? (
                         <MessageFrom message={message} />
                     ) : (
                         <MessageTo message={message} />

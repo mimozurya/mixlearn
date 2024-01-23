@@ -23,13 +23,16 @@ function Registration() {
 
     useEffect(() => {
         async function fetchData() {
-            const userResponce = await axios.get(
-                "https://655e414a9f1e1093c59acfec.mockapi.io/user"
-            );
+            // const userResponce = await axios.get(
+            //     "https://655e414a9f1e1093c59acfec.mockapi.io/user"
+            // );
+            const userResponce = await axios.get("http://79.174.83.190:8080/users");
             setUser(userResponce.data);
+            console.log(userResponce.data);
         }
 
         fetchData();
+        console.log(user);
     }, []);
 
     const checkUserData = () => {
@@ -39,7 +42,7 @@ function Registration() {
                 String(human.password) === String(password)
         );
         if (foundUser) {
-            setSiteUser(...foundUser.id);
+            setSiteUser(`${foundUser.id}`);
             setCanGo(true);
         }
     };
